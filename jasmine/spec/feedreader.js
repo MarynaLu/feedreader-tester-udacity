@@ -117,13 +117,13 @@ $(function() {
             //run the load function and store the first child of the feed in firstEntryBefore variable
             loadFeed(0, function(){
                 firstEntryBefore = $('.feed').first();
-                done();
-            });
-
+        
             //run the load function second time and store the first child of the feed in firstEntryAfter variable
-            loadFeed(1, function(){
-                firstEntryAfter = $('.feed').first();
-                done();
+                loadFeed(1, function(){
+                    firstEntryAfter = $('.feed').first();
+                    done();
+
+                });
             });
         });
 
