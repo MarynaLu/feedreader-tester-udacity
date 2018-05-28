@@ -104,7 +104,7 @@ $(function() {
     /* TODO: Write a new test suite named "New Feed Selection" */
 
     describe('New Feed Selection', function(){
-        var firstEntryBefore, firstEntryAfter;
+        var oldFeed, newFeed;
 
          /* This test ensures when a new feed is loaded
          * by the loadFeed() function that the content actually changes.
@@ -116,11 +116,11 @@ $(function() {
 
             //run the load function and store the first child of the feed in firstEntryBefore variable
             loadFeed(0, function(){
-                firstEntryBefore = $('.feed').first();
+                oldFeed = document.querySelector(".feed").innerHTML;
         
             //run the load function second time and store the first child of the feed in firstEntryAfter variable
                 loadFeed(1, function(){
-                    firstEntryAfter = $('.feed').first();
+                    newFeed = document.querySelector(".feed").innerHTML;
                     done();
 
                 });
@@ -129,7 +129,7 @@ $(function() {
 
         //test whether the first element in the feed is different (after running loadFeed() twice)
         it('new feed differs from the previous one', function(){
-            expect(firstEntryBefore).not.toBe(firstEntryAfter);
+            expect(oldFeed).not.toBe(newFeed);
         });
     });
 }());
