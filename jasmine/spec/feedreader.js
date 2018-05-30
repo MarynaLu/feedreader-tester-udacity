@@ -32,7 +32,7 @@ $(function() {
         it('contains valid urls', function(){
             for(let i=0; i < allFeeds.length; i++){
                 expect(allFeeds[i].url).toBeDefined();
-                expect(allFeeds[i].url).not.toBe(" ");
+                expect(allFeeds[i].url.length).toBeGreaterThan(0);
             };
         });
         /* This test loops through each feed
@@ -47,7 +47,7 @@ $(function() {
         });
     });
 
-    /* TODO: Write a new test suite named "The menu" */
+    
     describe('The menu', function(){
          /* This test ensures the menu element is
          * hidden by default.
